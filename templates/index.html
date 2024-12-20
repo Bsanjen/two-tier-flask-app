@@ -19,6 +19,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            overflow: hidden;
         }
 
         .container {
@@ -31,6 +32,7 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             border-radius: 20px;
             transition: transform 0.3s ease;
+            position: relative;
         }
 
         .container:hover {
@@ -111,6 +113,31 @@
             transform: translateY(0);
         }
 
+        .bird {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('https://img.icons8.com/external-flat-wichaiwi/64/000000/external-bird-spring-flat-wichaiwi.png') no-repeat center/contain;
+            animation: fly 10s infinite linear;
+        }
+
+        .bird:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .bird:nth-child(3) {
+            animation-delay: 4s;
+        }
+
+        @keyframes fly {
+            from {
+                transform: translate(-100px, 100px) rotate(0deg);
+            }
+            to {
+                transform: translate(100vw, -100px) rotate(360deg);
+            }
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
@@ -145,6 +172,10 @@
             <input type="submit" value="Submit">
         </form>
     </div>
+
+    <div class="bird"></div>
+    <div class="bird"></div>
+    <div class="bird"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
